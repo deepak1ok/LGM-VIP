@@ -35,21 +35,22 @@
                     </tr>
                     <tr>
                         <td style="display:flex; align-items: flex-start;"><label for="gender"></label>Gender</td>
-                        <td class="margin_input">
-                            <input type="radio" name="" id=""> Male <br>
-                            <input type="radio" name="" id=""> Female
+                        <td class="margin_input" id="gender">
+                            <input type="radio" name="gen" id="M"> Male <br>
+                            <input type="radio" name="gen" id="F"> Female
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="skills">Skills</label></td>
+                        <td><label for="skills" id="skills">Skills</label></td>
                         <td class="margin_input">
-                            <input type="checkbox" name="" id="">Java
-                            <input type="checkbox" name="" id="">HTML
-                            <input type="checkbox" name="" id="">CSS
+                            <input type="checkbox" name="" id="Java">Java
+                            <input type="checkbox" name="" id="HTML">HTML
+                            <input type="checkbox" name="" id="CSS">CSS
                         </td>
                     </tr>
                 </table>
-                <input class="btn" type="submit" value="Enroll Student"><input type="button" value="Clear">
+                <input id="submit" class="btn" type="submit" value="Enroll Student">
+                <input id="clear" type="button" value="Clear" onclick="clearAll()">
             </div>
             <div class="v_line"></div>
             <div class="display_section">
@@ -59,23 +60,24 @@
                         <th style="text-align: left; padding-left: 1em;">Description</th>
                         <th class="" width="100px">Image</th>
                     </thead>
-                    <tbody>
-                        <tr class="row-details">
+                    <tbody id="tb2">
+                        <!-- <tr class="row-details">
                             <td class="padding_details">
-                                <p>John Doe</p>
-                                <p>Male</p>
-                                <p>John.doe@gmail.com</p>
-                                <a href="">www.johndoe.com</a>
-                                <p>Java, HTML</p>
+                                <p id="p_name">John Doe</p>
+                                <p id="p_gen">Male</p>
+                                <p id="p_email">John.doe@gmail.com</p>
+                                <a id="a_website" href="#">www.johndoe.com</a>
+                                <p id="p_skills">Java, HTML</p>
 
                             </td>
                             <td class="img-col"><img src="" alt="" width="80px" height="80px"></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
         </div>
     </main>
+    <script src="/Registration_Form/javascript/script.js"></script>
 </body>
 
 </html>
