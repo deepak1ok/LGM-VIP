@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](design/desktop-design-theme-1.jpg)
+![](design\desktop-design-theme-1.jpg)
 
 
 ### Links
