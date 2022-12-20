@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://github.com/deepak1ok/Calculator-App.git)
+- Solution URL: (https://github.com/deepak1ok/LGM-VIP.git)
 - Live Site URL: (https://calculator-deepak1ok.netlify.app/)
 
 ## My process
