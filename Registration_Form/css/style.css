@@ -26,8 +26,12 @@
     }
     
     input {
-        margin-bottom: 6px;
-        margin-right: 4px;
+        margin-bottom: 15px;
+        margin-right: 6px;
+    }
+    
+    .input {
+        display: flex;
     }
     
     .form_section {
@@ -68,7 +72,7 @@
     }
     
     .v_line {
-        height: 350px;
+        /* height: 350px; */
         width: 2px;
         background-color: aqua;
         margin: 0 2em;
@@ -118,7 +122,7 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
-    .row-details {
+    tr.\.row-details {
         background-image: linear-gradient(-140deg, #f0d3fa, #b7dffd, #bef6e7);
         font-family: cursive;
         font-size: .8em;

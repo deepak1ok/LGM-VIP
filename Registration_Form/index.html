@@ -18,19 +18,19 @@
             <div class="form_section">
                 <table>
                     <tr>
-                        <td><label for="name">Name</label></td>
-                        <td class="margin_input"><input id="name" placeholder="e.g. Deepak Kumar" type="text"></td>
+                        <td class="input"><label for="name">Name</label></td>
+                        <td class="margin_input "><input id="name" placeholder="e.g. John doe" type="text"></td>
                     </tr>
                     <tr>
-                        <td><label for="email">Email</label></td>
+                        <td class="input"><label for="email">Email</label></td>
                         <td class="margin_input"><input id="email" placeholder="e.g. example@gmail.com" type="email"></td>
                     </tr>
                     <tr>
-                        <td><label for="website">Website</label></td>
-                        <td class="margin_input"><input id="website" type="text"></td>
+                        <td class="input"><label for="website">Website</label></td>
+                        <td class="margin_input"><input id="website" placeholder="www.johndoe.com" type="text"></td>
                     </tr>
                     <tr>
-                        <td><label for="img-link">Image link</label></td>
+                        <td class="input"><label for="img-link">Image link</label></td>
                         <td class="margin_input "><input id="image_link" type="text"></td>
                     </tr>
                     <tr>
@@ -57,6 +57,7 @@
                 <table width="100%">
                     <h2>Enrolled Students</h2>
                     <thead>
+                        <th width="60px">Select</th>
                         <th style="text-align: left; padding-left: 1em;">Description</th>
                         <th class="" width="100px">Image</th>
                     </thead>
@@ -73,7 +74,10 @@
                             <td class="img-col"><img src="" alt="" width="80px" height="80px"></td>
                         </tr> -->
                     </tbody>
+
                 </table>
+                <input type="button" value="Delete" onclick="delete_details()">
+                <input type="button" value="Edit">
             </div>
         </div>
     </main>

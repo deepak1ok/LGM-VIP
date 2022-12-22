@@ -1,4 +1,4 @@
-let name = document.querySelector("#name");
+let name1 = document.querySelector("#name");
 let email = document.querySelector("#email");
 let website = document.querySelector("#website");
 let image = document.querySelector("#image_link");
@@ -9,7 +9,7 @@ let clear = document.querySelector("#clear");
 
 
 function clearAll() {
-    name.value = '';
+    name1.value = '';
     email.value = '';
     website.value = '';
     image.value = '';
@@ -21,23 +21,32 @@ function clearAll() {
     }
 }
 
-submit.addEventListener('click', (e) => {
-    var tr = document.createElement('tr')
-    tr.classList.add('.row-details');
-    var td1 = tr.appendChild(document.createElement('td'))
+function enroll_students() {
+    var tr = document.createElement('tr');
+    var td0 = tr.appendChild(document.createElement('td'));
+    td0.classList.add('.padding_details');
+    td0.classList.add('.select_td');
+    var td1 = tr.appendChild(document.createElement('td'));
     td1.classList.add('.padding_details');
-    var td2 = tr.appendChild(document.createElement('td'))
+    var td2 = tr.appendChild(document.createElement('td'));
     td2.classList.add('img-col');
+    tr.classList.add('.row-details');
 
+    var check = document.createElement('input');
+    check.type = 'checkbox';
+    check.name = 'input_check';
+
+    td0.appendChild(check);
+    td0.style.textAlign = 'center';
 
     //name
     let p_name = document.createElement('p')
-    p_name.innerHTML = `${name.value}`;
+    p_name.innerHTML = `${name1.value}`;
 
     //gender
     let p_gen = document.createElement('p')
     for (let gen of genders) {
-        console.log(gen.id);
+        // console.log(gen.id);
         if (gen.checked === true) {
             if (gen.id === 'M') {
                 p_gen.innerHTML = "Male";
@@ -54,8 +63,9 @@ submit.addEventListener('click', (e) => {
 
     //website
     let a_website = document.createElement('a');
-    a_website.href = `${website.value}`;
-    a_website.innerHTML = `https://www.${website.value}/`;
+    a_website.href = `https://${website.value}`;
+    a_website.target = "_blank"
+    a_website.innerHTML = `https://${website.value}`;
 
     //skills
     let p_skill = document.createElement('p');
@@ -81,4 +91,27 @@ submit.addEventListener('click', (e) => {
     //col-2
     td2.appendChild(img);
     document.getElementById('tb2').appendChild(tr);
+
+}
+document.addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') {
+        enroll_students();
+    }
+});
+submit.addEventListener('click', (e) => {
+    enroll_students();
 })
+
+
+function delete_details() {
+    var checks = document.getElementsByName('input_check');
+
+    for (let c = 0; c < checks.length; c++) {
+
+        if (checks[c].checked == true) {
+            checks[c].parentElement.parentElement.remove();
+            checks = document.getElementsByName('input_check');
+            c--;
+        }
+    }
+}
