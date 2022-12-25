@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://github.com/deepak1ok/LGM-VIP.git)
-- Live Site URL: (https://calculator-deepak1ok.netlify.app/)
+- Solution URL: [solution URL here](https://github.com/deepak1ok/LGM-VIP.git)
+- Live Site URL: [live site URL here](https://calculator-deepak1ok.netlify.app/)
 
 ## My process
 
@@ -71,6 +71,6 @@ else if (e.target.innerText == 'DEL') {
 
 ## Author
 
-- Frontend Mentor - (https://www.frontendmentor.io/profile/deepak1ok)
-- Twitter - (https://twitter.com/deepak10460)
+- Frontend Mentor - [@deepak1ok](https://www.frontendmentor.io/profile/deepak1ok)
+- Twitter - [@deepak10460](https://twitter.com/deepak10460)
 
