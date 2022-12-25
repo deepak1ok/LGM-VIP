@@ -16,7 +16,7 @@
 
 ### Screenshot
 
-![](.\images\regd_no.png)
+![](./images/regd_no.png)
 
 
 ### Links
