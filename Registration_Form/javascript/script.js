@@ -6,6 +6,11 @@ let genders = document.querySelectorAll("input[type=radio]");
 let skills = document.querySelectorAll("input[type=checkbox]");
 let submit = document.querySelector("#submit");
 let clear = document.querySelector("#clear");
+let male = document.querySelector("#M");
+let female = document.querySelector("#F");
+let java = document.querySelector("#Java");
+let html = document.querySelector("#HTML");
+let css = document.querySelector("#CSS");
 
 
 function clearAll() {
@@ -42,6 +47,7 @@ function enroll_students() {
     //name
     let p_name = document.createElement('p')
     p_name.innerHTML = `${name1.value}`;
+    // p_name.style.textTransform = "lowercase";
 
     //gender
     let p_gen = document.createElement('p')
@@ -86,12 +92,17 @@ function enroll_students() {
     //image
     let img = document.createElement('img');
     img.src = `${image.value}`;
-    img.style.width = "85px";
-    img.style.height = "100px";
+    img.style.width = "115px";
+    img.style.height = "130px";
     //col-2
     td2.appendChild(img);
     document.getElementById('tb2').appendChild(tr);
 
+}
+
+function validateEmail(email) {
+    const res = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return res.test(String(email).toLowerCase());
 }
 document.addEventListener('keyup', function(e) {
     if (e.key === 'Enter') {
@@ -99,7 +110,14 @@ document.addEventListener('keyup', function(e) {
     }
 });
 submit.addEventListener('click', (e) => {
-    enroll_students();
+    if (name1.value == "" || email.value == "" || website.value == "" || image.value == "" || (male.checked == false && female.checked == false) || (java.checked == false && html.checked == false && css.checked == false)) {
+        alert("Please Fill all the boxes")
+    } else if (!validateEmail(email.value)) {
+        alert("Invalid Email")
+
+    } else {
+        enroll_students();
+    }
 })
 
 
