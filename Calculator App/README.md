@@ -10,8 +10,6 @@
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -59,17 +57,6 @@ To see how you can add code snippets, see below:
 ```
 ```css
 .num {
-    width: 60px;
-    height: 30px;
-    font-size: 32px;
-    background-color: hsl(30, 25%, 89%);
-    margin: 0.2em .3em 0.4em .2em;
-    padding: .8em 1.4em;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
     box-shadow: 0px 5px 2px hsl(28deg 16% 65%)
 }
 ```
