@@ -21,7 +21,7 @@
 
 ### Links
 
-- Solution URL: [] (https://github.com/deepak1ok/LGM-VIP.git)
+- Solution URL: [](https://github.com/deepak1ok/LGM-VIP.git)
 - Live Site URL: [](https://regd-form-deepak1ok.netlify.app/)
 
 
@@ -62,5 +62,5 @@ function validateEmail(email) {
 ## Author
 
 - Frontend Mentor - [@deepak1ok](https://www.frontendmentor.io/profile/deepak1ok)
-- Twitter - [@deepak10460] (https://twitter.com/deepak10460)
+- Twitter - [@deepak10460](https://twitter.com/deepak10460)
 
