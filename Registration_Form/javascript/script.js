@@ -28,13 +28,14 @@ function clearAll() {
 
 function enroll_students() {
     var tr = document.createElement('tr');
+    tr.classList.add('.row-details');
     var td0 = tr.appendChild(document.createElement('td'));
     td0.classList.add('.padding_details');
     td0.classList.add('.select_td');
     var td1 = tr.appendChild(document.createElement('td'));
     td1.classList.add('.padding_details');
     var td2 = tr.appendChild(document.createElement('td'));
-    td2.classList.add('img-col');
+    td2.classList.add('.img-col');
     tr.classList.add('.row-details');
 
     var check = document.createElement('input');
@@ -92,8 +93,9 @@ function enroll_students() {
     //image
     let img = document.createElement('img');
     img.src = `${image.value}`;
-    img.style.width = "115px";
-    img.style.height = "130px";
+    // img.style.width = "115px";
+    // img.style.height = "130px";
+
     //col-2
     td2.appendChild(img);
     document.getElementById('tb2').appendChild(tr);
@@ -106,9 +108,22 @@ function validateEmail(email) {
 }
 document.addEventListener('keyup', function(e) {
     if (e.key === 'Enter') {
-        enroll_students();
+        if (name1.value == "" || email.value == "" || website.value == "" || image.value == "" || (male.checked == false && female.checked == false) || (java.checked == false && html.checked == false && css.checked == false)) {
+            alert("Please Fill all the boxes")
+        } else if (!validateEmail(email.value)) {
+            alert("Invalid Email")
+
+        } else {
+            if (search_email(email.value) === true) {
+                alert("Email Id already enrolled");
+            } else {
+                enroll_students();
+                clearAll();
+            }
+        }
     }
 });
+
 submit.addEventListener('click', (e) => {
     if (name1.value == "" || email.value == "" || website.value == "" || image.value == "" || (male.checked == false && female.checked == false) || (java.checked == false && html.checked == false && css.checked == false)) {
         alert("Please Fill all the boxes")
@@ -116,7 +131,15 @@ submit.addEventListener('click', (e) => {
         alert("Invalid Email")
 
     } else {
-        enroll_students();
+        if (search_email(email.value) === true) {
+            alert("Email Id already enrolled");
+        } else if (name1.value.length > 32) {
+            alert('Student Name must be less than 32 characters')
+        } else {
+            enroll_students();
+            clearAll();
+        }
+
     }
 })
 
@@ -132,4 +155,16 @@ function delete_details() {
             c--;
         }
     }
+}
+
+
+function search_email(email) {
+    var rows = document.querySelector('#table_details').querySelectorAll('tr');
+    for (let i = 1; i < rows.length; i++) {
+        console.log("hi");
+        if (rows[i].children[1].children[2].innerHTML === email) {
+            return true;
+        }
+    }
+    return false;
 }

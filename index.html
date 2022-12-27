@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>To-Do List</title>
+</head>
+
+<body>
+    <h1>To-Do List</h1>
+    <form id="todo-form">
+        <input type="text" id="todo-input" placeholder="Enter a new to-do item">
+        <button type="submit">Add</button>
+    </form>
+    <ul id="todo-list"></ul>
+    <script>
+        // Get references to the form and list elements
+        const form = document.getElementById('todo-form');
+        const list = document.getElementById('todo-list');
+
+        // Load any existing to-do items from local storage
+        const loadTodos = () => {
+            const todos = localStorage.getItem('todos');
+            if (todos) {
+                JSON.parse(todos).forEach(todo => {
+                    addTodo(todo);
+                });
+            }
+        };
+        loadTodos();
+
+        // Add a new to-do item to the list
+        const addTodo = text => {
+            const li = document.createElement('li');
+            li.innerHTML = text;
+            list.appendChild(li);
+        };
+
+        // Save the to-do items to local storage
+        const saveTodos = () => {
+            const todos = [];
+            for (let i = 0; i < list.children.length; i++) {
+                todos.push(list.children[i].innerHTML);
+            }
+            localStorage.setItem('todos', JSON.stringify(todos));
+        };
+
+        // Handle form submission
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            const input = document.getElementById('todo-input');
+            addTodo(input.value);
+            input.value = '';
+            saveTodos();
+        });
+    </script>
+</body>
+
+</html>
